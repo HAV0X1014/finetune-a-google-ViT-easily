@@ -99,7 +99,7 @@ print("Metrics function defined.")
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,                 # Output directory for checkpoints and logs
     # Set a generous number of epochs, early stopping will handle when to stop
-    num_train_epochs=10,                   # Increased maximum epochs
+    num_train_epochs=6,                   # Increased maximum epochs
 
     # --- Speed & VRAM Optimization ---
     # Adjust batch sizes based on your 24GB VRAM. Start high and decrease if OOM.
