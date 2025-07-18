@@ -8,6 +8,7 @@ This code also assumes that you are using an ImageFolder dataset - that will be 
 ## Usage
 
 Install `transformers datasets accelerate torch torchvision scikit-learn pillow` into a venv.
+As of 7/18/2025 the versions of each package I used were `transformers==4.52.4 datasets==4.0.0 accelerate==1.8.1 torch==2.9.0.dev20250711+rocm6.3 torchvision==0.24.0.dev20250712+rocm6.3 scikit-learn==1.7.1 pillow==11.2.1`
 
 Organize your images into a structure similar to the graph. It is important to make a validation dataset so you can observe the effectiveness of your training while it is going on (i.e., if your accuracy isn't improving after a few epochs, you aren't helping your model much). Your validation dataset does not need to be equal in size to your training dataset - make sure it is big enough to cover any edge cases you can think of but not big enough to cause a big break in training time.
 
