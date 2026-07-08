@@ -1,6 +1,7 @@
 import os
 import shutil
 import random
+import argparse
 
 def move_random_files(source_folder, destination_folder, num_files):
     """
@@ -9,7 +10,7 @@ def move_random_files(source_folder, destination_folder, num_files):
     Args:
         source_folder (str): The path to the folder containing the files.
         destination_folder (str): The path to the folder where the files should be moved.
-        num_files (int): The number of random files to move (default: 10000).
+        num_files (int): The number of random files to move (default: 150).
     """
 
     try:
@@ -50,10 +51,13 @@ def move_random_files(source_folder, destination_folder, num_files):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-if __name__ == "__main__":
-    # Replace with your actual source and destination folder paths
-    source_folder = "NonKF multipost"  # Example: "/path/to/your/source/folder"
-    destination_folder = "nonkf_validation"  # Example: "/path/to/your/destination/folder"
-    num_files_to_move = 150  # You can change this if you want to move a different number of files
 
-    move_random_files(source_folder, destination_folder, num_files_to_move)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Move a specified number of random files from source to destination folder.")
+    parser.add_argument("source_folder", help="Path to the source folder")
+    parser.add_argument("destination_folder", help="Path to the destination folder")
+    parser.add_argument("-n", "--num_files", type=int, default=150, help="Number of random files to move (default: 150)")
+
+    args = parser.parse_args()
+
+    move_random_files(args.source_folder, args.destination_folder, args.num_files)
